@@ -5,7 +5,10 @@
     justify-content: space-between;
     padding: 30px 0 30px 0;
     box-sizing: border-box;
+}
 
+.wrapper-flow{
+    max-width: 100%;
 }
 
 .innerLine {

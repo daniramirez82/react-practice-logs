@@ -84,5 +84,4 @@ export default function Form({ formTitle }) {
 
 Form.propTypes = {
   formTitle: PropTypes.string.isRequired,
-  onAddLog: PropTypes.func.isRequired,
 };
