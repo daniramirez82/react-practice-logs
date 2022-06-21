@@ -23,7 +23,7 @@ export default function Flow({activeNumber, totalNumber}) {
   //read the total or the width of the parent container and rest the with of the balls plus the padding
   //all this in a state variables for rerended updates
 
-  const checked = [...Array(activeNumber-1)].map((item, index)=>{return(<><BallChecked key={index.toString()}/><Line widthLine={'2500'}/></>)});
+  const checked = [...Array(activeNumber-1)].map((item, index)=>{return(<><BallChecked key={index.toString()}/><Line widthLine={'60'}/></>)});
   const disabled = [...Array(totalNumber-activeNumber)].map((item, index) =>{ return (<> <LineDoted widthLine={'25'}/> <CircleDisabled number={totalNumber} /></>)});
 
 

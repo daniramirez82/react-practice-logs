@@ -10,7 +10,7 @@ export default function App() {
   return (
 
     <div className="app-cont">
-      <Flow activeNumber= {3} totalNumber = {4} />
+      <Flow activeNumber= {2} totalNumber = {3} />
       <PageTitles title="login & enjoy with us" />
       <Form formTitle="LOGIN HERE" />
     </div>

@@ -1,4 +1,6 @@
 .line-cont{
     display: flex;
     align-items: center;
+    overflow-x: hidden;
+    margin:5px;
 }
