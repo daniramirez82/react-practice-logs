@@ -1,0 +1,9 @@
+.breadcrums-strong {
+    font-weight: 800;
+}
+
+.breadcrums {
+    color: rgba(255, 255, 255, 0.774);
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}

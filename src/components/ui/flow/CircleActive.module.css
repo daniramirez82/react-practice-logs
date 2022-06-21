@@ -1,0 +1,16 @@
+.circle{
+    border: 1px solid #e28d2c;
+    width: 18px;
+    height: 18px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number{
+    color:antiquewhite;
+    font-size: 0.6rem;
+    margin-top: -1px;
+    margin-left: 1px;
+}

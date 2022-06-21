@@ -1,49 +1,30 @@
 import React from 'react';
+import BallChecked from './ui/flow/BallChecked';
 import './Flow.css';
+import Line from './ui/flow/Line';
+import LineDoted from './ui/flow/LineDoted';
+import CircleActive from './ui/flow/CircleActive';
+import PropTypes from 'prop-types';
+import CircleDisabled from './ui/flow/CircleDisabled';
 
-export default function Flow() {
+export default function Flow({activeNumber, totalNumber}) {
+
+  const checked = [...Array(activeNumber-1).fill(<><BallChecked /><Line widthLine={'25'}/></>)]
+  const disabled = [...Array(totalNumber-activeNumber).fill(<> <LineDoted widthLine={'25'}/> <CircleDisabled number={totalNumber} /></>)]
+
+
   return (
     <div className="wrapper-flow">
       <div className="flow">
-        <div className="ball-1 ball">
-          <img
-            className="ball-1-svg"
-            src="img/ellipse1.svg"
-            alt="ellipse"
-          />
-          <img className="check-1-svg" src="img/check.svg" alt="ellipse" />
-        </div>
-        <div className="line-1">
-          <img src="img/line.svg" className="line-1-line-svg" alt="line" />
-        </div>
-        <div className="ball-2 ball">
-          <img
-            className="ball-1-svg"
-            src="img/ellipse1.svg"
-            alt="ellipse"
-          />
-          <img className="check-1-svg" src="img/check.svg" alt="ellipse" />
-
-        </div>
-        <div className="line-1">
-          <img src="img/line.svg" className="line-1-line-svg" alt="line" />
-
-        </div>
-        <div className="ball-3">
-          <div className="circle-3">
-            <span className="number-3">3</span>
-          </div>
-        </div>
-        <div className="line-1">
-          <img src="img/line-dot.svg" className="line-1-line-svg" alt="line" />
-
-        </div>
-        <div className="ball-4">
-          <div className="circle-4">
-            <span className="number-3">4</span>
-          </div>
-        </div>
+        {checked}
+        <CircleActive activeNumber={activeNumber}/>
+        {disabled}
       </div>
     </div>
   );
+}
+
+Flow.prototype = {
+  activeNumber: PropTypes.number.isRequired,
+  totalNumber: PropTypes.number.isRequired,
 }

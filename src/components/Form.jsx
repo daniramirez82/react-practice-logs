@@ -28,7 +28,7 @@ const validateForm = (errors) => {
   return valid;
 };
 
-export default function Form({ formTitle, onAddLog }) {
+export default function Form({ formTitle }) {
   const [formState, dispatch] = useReducer(formReducer, initialFormState);
 
   const changeHandler = (e) => {
@@ -50,19 +50,11 @@ export default function Form({ formTitle, onAddLog }) {
     });
   };
 
-  function pad(numberString, size) {
-    let padded = numberString;
-    while (padded.length < size) padded = `0${padded}`;
-    return padded;
-  }
-
   const submitHandler = (e) => {
     e.preventDefault();
     const d = new Date();
-    const hour = [pad(d.getHours(), 2), pad(d.getMinutes(), 2)].join(' : ');
     if (validateForm(formState.errors)) {
       console.log('Valid Form');
-      onAddLog({ ...formState, timeStamp: hour });
     } else {
       console.log('Invalid Form');
     }

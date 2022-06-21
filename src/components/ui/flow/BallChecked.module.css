@@ -1,0 +1,16 @@
+.ball {
+    position: relative;
+}
+
+.ball-svg{
+    width: 18px;
+}
+
+.check-svg{
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    top: 50%;
+    margin-top: -6px;
+    
+}
