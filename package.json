@@ -41,6 +41,8 @@
     ]
   },
   "devDependencies": {
-    "husky": "^8.0.1"
+    "@7urtle/lambda": "^1.4.1",
+    "husky": "^8.0.1",
+    "react-router-dom": "^6.3.0"
   }
 }

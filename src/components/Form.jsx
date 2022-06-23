@@ -8,6 +8,7 @@ import './Form.css';
 import Button from './ui/Button';
 import ButtonClear from './ui/ButtonClear';
 import Input from './ui/Input';
+import {Link} from 'react-router-dom'
 
 const initialFormState = {
   user: '',
@@ -72,7 +73,7 @@ export default function Form({ formTitle }) {
             <Input label="Your user name will be:" name="user" type="text" onChange={changeHandler} value={formState.user} validateState={formState.errors.user} />
             <Input label="Very secret pass" name="password" type="password" onChange={changeHandler} value={formState.password} validateState={formState.errors.password} />
             <div className="buttons">
-              <ButtonClear type="button" disabled={false}>Go Back</ButtonClear>
+              <Link to='/'><Button type="button" isClear={true} disabled={false}>Go Back</Button></Link>
               <Button type="submit" disabled={!(!formState.errors.user && !formState.errors.password)}>Login</Button>
             </div>
           </form>

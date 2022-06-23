@@ -15,16 +15,19 @@ export default function Flow({activeNumber, totalNumber}) {
   if(activeNumber >totalNumber) activeNumber = totalNumber;
 
   const wrapper = useRef(null);
+  let disabled= [];
 
   useEffect(()=>{
     console.log('width: ', wrapper.current ? wrapper.current.offsetWidth : 0 );
+    
   },[wrapper.current]);
 
-  //read the total or the width of the parent container and rest the with of the balls plus the padding
-  //all this in a state variables for rerended updates
+  const checked = [...Array(activeNumber-1)].map((item, index)=>{return(<><BallChecked key={index.toString()}/><Line/></>)});
+  
+    for (let i = activeNumber; i  < totalNumber; i++) {
+      disabled = [...disabled, <><LineDoted/><CircleDisabled number={i+1} /></>]
+    }
 
-  const checked = [...Array(activeNumber-1)].map((item, index)=>{return(<><BallChecked key={index.toString()}/><Line widthLine={'60'}/></>)});
-  const disabled = [...Array(totalNumber-activeNumber)].map((item, index) =>{ return (<> <LineDoted widthLine={'25'}/> <CircleDisabled number={totalNumber} /></>)});
 
 
   return (
