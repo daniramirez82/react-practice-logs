@@ -3,6 +3,7 @@ import {lastIndexOf, substr} from '@7urtle/lambda';
 import {BrowserRouter as Router} from 'react-router-dom';
 import MyRoutes from './Routes';
 import './App.css';
+import React from 'react';
 
 
 // * 

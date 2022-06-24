@@ -6,7 +6,6 @@ import formReducer from '../helpers/formLoginRedurcer';
 import { validPassRegex, validUserRegex } from '../helpers/validators';
 import './Form.css';
 import Button from './ui/Button';
-import ButtonClear from './ui/ButtonClear';
 import Input from './ui/Input';
 import {Link} from 'react-router-dom'
 
@@ -53,7 +52,6 @@ export default function Form({ formTitle }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const d = new Date();
     if (validateForm(formState.errors)) {
       console.log('Valid Form');
     } else {

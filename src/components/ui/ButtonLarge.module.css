@@ -1,0 +1,43 @@
+.button {
+    background: none;
+    color: #000000;
+    border-radius: 8px;
+    border: none;
+    padding: 0 35px 0 35px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    height: 3rem;
+    background-color: #FED789;
+    width: 100%;
+}
+
+.button:disabled,
+.button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.outer-line {
+  background: none;
+  color: white;
+  border: none;
+  padding: 0 15px 0 15px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  background-color: transparent;
+  border: 2px solid #fff7e7af;
+}
+
+.button-clear {
+  background: none;
+  color: white;
+  border: none;
+  padding: 0 15px 0 15px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  background-color: transparent;
+}
