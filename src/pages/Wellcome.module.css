@@ -1,6 +1,6 @@
 /*  */
 
-.wellcome-wrapper{
+.wellcome-wrapper {
     height: 100%;
     flex-grow: 1;
     display: flex;
@@ -8,13 +8,13 @@
     justify-content: space-between;
 }
 
-.buttons{
+.buttons {
     display: flex;
     padding-bottom: 2rem;
     justify-content: space-between;
     flex-direction: column;
 }
 
-.button1{
+.button1 {
     margin-bottom: 1rem;
 }
