@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import AuthContext from "../store";
 
-const [isLoggedIn, setLog] = useState(false);
-
-const logOff = () => {
-  setLog(false);
-};
-
-const logIn = () => {
-  setLog(true);
-};
-
 const AuthWrapper = ({ children }) => {
+  const [isLoggedIn, setLog] = useState(false);
+
+  const logOff = () => {
+    console.log('logoff ran')
+    setLog(false);
+  };
+
+  const logIn = () => {
+    setLog(true);
+  };
   return (
     <AuthContext.Provider value={{ isLoggedIn, logOff, logIn }}>
       {children}

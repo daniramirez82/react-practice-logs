@@ -3,15 +3,14 @@ import PageTitles from "../components/ui/PageTitles";
 import Form from "../components/Form";
 import AuthContext from "../store";
 
-let context = null;
 const Step2 = () => {
-  useEffect(()=>{
-   context = useContext(AuthContext);
-   context.logIn();
-  }, [])
+  const context = useContext(AuthContext);
+  useEffect(() => {
+    context.logIn();
+  }, []);
   return (
     <>
-      if (context) && <p>{context.isLoggedIn}</p>
+      {context.isLoggedIn ? "log" : "no log"}
       <PageTitles title="login & enjoy with us" />
       <Form formTitle="LOGIN HERE" />
     </>
