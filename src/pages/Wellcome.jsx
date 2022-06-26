@@ -16,7 +16,7 @@ const Wellcome = () => {
       <Titles title="wellcome again :)" />
       <div className={classes.buttons}>
         <div className={classes.button1}>
-          <Link to={"/Step2"}>
+          <Link to={"/login"}>
             {" "}
             <ButtonLarge isOuterLine={true} type="button">
               Login
