@@ -1,10 +1,10 @@
-export const theme = {
-    light: {
-        color: "#555555",
-        background: "#eeeeee"
-    },
-    dark: {
-      color: "#eeeeee",
-      background: "#222222"
-    }
-}
+import { createContext } from "react";
+
+const AuthContext = createContext( {
+    isLoggedIn : false,
+    logIn : ()=>{},
+    logOff :()=>{},
+});
+
+
+export default AuthContext;

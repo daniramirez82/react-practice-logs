@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import { Link } from 'react-router-dom';
 import Titles from "../components/ui/PageTitles";
 import ButtonLarge from "../components/ui/ButtonLarge";
 import classes from './Wellcome.module.css'
+import AuthContext from "../store";
+
 
 
 const Wellcome = () => {
+    useEffect(()=>{
+        const context = useContext(AuthContext);
+        context.logOff();
+    },[])
     return (
         <div className={classes['wellcome-wrapper']}>
             <Titles title="wellcome again :)" />
