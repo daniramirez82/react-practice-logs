@@ -7,7 +7,7 @@ import { validPassRegex, validUserRegex } from "../helpers/validators";
 import "./Form.css";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import AuthContext from "../store";
 
 const initialFormState = {
@@ -31,7 +31,7 @@ const validateForm = (errors) => {
 
 export default function Form({ formTitle }) {
   const [formState, dispatch] = useReducer(formLoginReducer, initialFormState);
-  const logContext = useContext(AuthContext);
+  const {logIn} = useContext(AuthContext);
   const changeHandler = (e) => {
     e.preventDefault();
 
@@ -67,7 +67,7 @@ export default function Form({ formTitle }) {
         formState.user,
         `${formState.user} ${formState.password}`
       );
-      logContext.logIn({ user: formState.user, password: formState.password });
+      logIn({ user: formState.user, password: formState.password });
       console.log("localStorage save this: ", user);
     } else {
       console.log("Invalid Form");
@@ -104,8 +104,8 @@ export default function Form({ formTitle }) {
                 <Button type="button" isClear={true} disabled={false}>
                   Go Back
                 </Button>
-              </Link>
-                {" "}
+              </Link>{" "}
+              <Link to={"/home"}>
                 <Button
                   type="submit"
                   disabled={
@@ -114,7 +114,7 @@ export default function Form({ formTitle }) {
                 >
                   Login
                 </Button>
-             
+              </Link>
             </div>
           </form>
         </div>

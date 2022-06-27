@@ -12,7 +12,7 @@ const Wellcome = () => {
   }, []);
   return (
     <div className={classes["wellcome-wrapper"]}>
-      <p>{context.isLoggedIn ? 'log' : 'no log'}</p>
+      <p>{context.isLoggedIn ? "log" : "no log"}</p>
       <Titles title="wellcome again :)" />
       <div className={classes.buttons}>
         <div className={classes.button1}>
@@ -24,9 +24,11 @@ const Wellcome = () => {
           </Link>
         </div>
         <div className="button">
-          <ButtonLarge type={"button"} isClear={false}>
-            Register{" "}
-          </ButtonLarge>
+          
+            <ButtonLarge type={"button"} isClear={false}>
+              Register{" "}
+            </ButtonLarge>
+         
         </div>
       </div>
     </div>

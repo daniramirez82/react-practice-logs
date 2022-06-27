@@ -16,5 +16,5 @@ Button.propTypes = {
   type: PropTypes.string.isRequired,
   disabled: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
-  isClear : PropTypes.bool.isRequired,
+  isClear : PropTypes.bool,
 };
