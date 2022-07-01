@@ -7,8 +7,10 @@ import { validPassRegex, validUserRegex } from "../helpers/validators";
 import "./Form.css";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
-import { Link} from "react-router-dom";
-import AuthContext from "../store";
+import { Link } from "react-router-dom";
+import { UserContext } from "../wrappers/AuthWrapper";
+import { useNavigate } from 'react-router-dom';
+
 
 const initialFormState = {
   user: "",
@@ -31,7 +33,12 @@ const validateForm = (errors) => {
 
 export default function Form({ formTitle }) {
   const [formState, dispatch] = useReducer(formLoginReducer, initialFormState);
-  const {logIn} = useContext(AuthContext);
+  const { userInfo, logIn } = useContext(UserContext);
+  const navigate = useNavigate();
+
+
+  // const [userInput, setUserInput] = useState("")
+
   const changeHandler = (e) => {
     e.preventDefault();
 
@@ -50,6 +57,8 @@ export default function Form({ formTitle }) {
         : "*You need at least 8 characters and one number";
     }
 
+
+
     dispatch({
       type: "HANDLE_INPUT_TEXT",
       field: name,
@@ -60,21 +69,29 @@ export default function Form({ formTitle }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
     console.log("submit handler ran");
+
     if (validateForm(formState.errors)) {
       console.log("Valid Form", formState);
-      const user = localStorage.setItem(
+
+      //local storage
+      const localData = localStorage.setItem(
         formState.user,
         `${formState.user} ${formState.password}`
       );
-      logIn({ user: formState.user, password: formState.password });
-      console.log("localStorage save this: ", user);
+      //end local storage
+
+      logIn(formState);
+
+      // logIn({ user: formState.user, password: formState.password });
     } else {
       console.log("Invalid Form");
     }
     dispatch({
       type: "CLEAR_FORM",
     });
+    navigate("/home");
   };
 
   return (
@@ -91,6 +108,8 @@ export default function Form({ formTitle }) {
               value={formState.user}
               validateState={formState.errors.user}
             />
+            <p>User from input{formState.user}</p>
+            <p>User from store {userInfo.user}</p>
             <Input
               label="Very secret pass"
               name="password"
@@ -105,16 +124,17 @@ export default function Form({ formTitle }) {
                   Go Back
                 </Button>
               </Link>{" "}
-              <Link to={"/home"}>
-                <Button
-                  type="submit"
-                  disabled={
-                    !(!formState.errors.user && !formState.errors.password)
-                  }
-                >
-                  Login
-                </Button>
-              </Link>
+
+              <Button
+                onClick={submitHandler}
+                type="button"
+                disabled={
+                  !(!formState.errors.user && !formState.errors.password)
+                }
+              >
+                Login
+              </Button>
+
             </div>
           </form>
         </div>

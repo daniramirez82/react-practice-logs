@@ -1,14 +1,17 @@
-import React, { useReducer, useMemo} from "react";
-import AuthContext from "../store";
+import React, { createContext, useMemo, useReducer} from "react";
 import { userReducer } from "../helpers/reducers";
 
 const initialState = {
   isLoggedIn: false,
   user: "Danilo",
-  password: "",
+  password: "daniloZZZ",
 };
 
+const UserContext = createContext();
+
+
 const AuthWrapper = ({ children }) => {
+  
   const [userInfo, dispatch] = useReducer(userReducer, initialState);
 
   const logOff = () => {
@@ -23,14 +26,16 @@ const AuthWrapper = ({ children }) => {
     console.log('logIn ran :', info);
   };
 
-  const value = useMemo(()=>(userInfo, logOff, logIn),[userInfo]);
+
+  const value = useMemo(
+    ()=>({userInfo, logOff, logIn}),[userInfo]);
   
   return (
-    <AuthContext.Provider value={value}>
+    <UserContext.Provider value={value}>
       <p>Usuario: {userInfo.user}</p>
       {children}
-    </AuthContext.Provider>
+    </UserContext.Provider>
   );
 };
 
-export default AuthWrapper;
+export {AuthWrapper, UserContext};

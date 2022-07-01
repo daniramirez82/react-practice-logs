@@ -1,10 +1,11 @@
-import Flow from "./components/Flow";
+import FlowWrapperParent from "./components/FlowWrapperParent";
 import { lastIndexOf, substr } from "@7urtle/lambda";
 import { BrowserRouter as Router } from "react-router-dom";
 import MyRoutes from "./Routes";
 import "./App.css";
-import React from "react";
-import AuthWrapper from "./wrappers/AuthWrapper";
+import React, { useContext } from "react";
+import { AuthWrapper } from "./wrappers/AuthWrapper";
+import { FlowWrapper } from "./wrappers/FlowWrapper";
 
 // *
 // * @HindleyMilner getBasename :: string -> string
@@ -23,14 +24,20 @@ const getBasename = (path) => substr(lastIndexOf("/")(path))(0)(path);
  * @returns {JSX.Element}
  */
 
+
 export default function App() {
+
+
   return (
     <div className="app-cont">
       <AuthWrapper>
-        <Flow activeNumber={2} totalNumber={3} />
-        <Router basename={getBasename(window.location.pathname)}>
-          <MyRoutes />
-        </Router>
+        <FlowWrapper>
+
+          <FlowWrapperParent />
+          <Router basename={getBasename(window.location.pathname)}>
+            <MyRoutes />
+          </Router>
+        </FlowWrapper>
       </AuthWrapper>
     </div>
   );

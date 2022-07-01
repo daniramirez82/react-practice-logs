@@ -1,0 +1,5 @@
+in the global state use the useReduce to save mor infor of the current user as user name password and so on
+
+make another global state to work with the number of page in order to change the balls with the numbers
+
+i will tray to chance the global state and  pas like a prop for use the ball in difeentes pages like the states bue i broke the app

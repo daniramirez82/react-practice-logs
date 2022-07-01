@@ -1,12 +1,19 @@
-import React, {useContext} from "react";
-import AuthContext from "../store";
-
+import React, {useContext, useEffect} from "react";
+import {UserContext} from "../wrappers/AuthWrapper";
+import { FlowContext } from "../wrappers/FlowWrapper";
+import PageTitles from '../components/ui/PageTitles'
 const Home = ()=>{
-    const logContext = useContext(AuthContext);
-    console.log(logContext);
+    const {userInfo} = useContext(UserContext);
+    const {setPageFlow} = useContext(FlowContext);
+
+    useEffect(()=>{
+        setPageFlow(3)
+    },[])
+    
+    console.log(userInfo);
 
     return (
-        <p>{logContext.user}</p>
+        <PageTitles title={`Welcome back ${userInfo.user}`}/>
     )
 }
 
