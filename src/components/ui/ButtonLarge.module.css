@@ -10,6 +10,7 @@
     height: 3rem;
     background-color: #FED789;
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 .button:disabled,
@@ -19,7 +20,7 @@
   color: #666666;
 }
 
-.outer-line {
+.button-outer-line {
   background: none;
   color: white;
   border: none;
@@ -40,4 +41,9 @@
   cursor: pointer;
   outline: inherit;
   background-color: transparent;
+}
+
+.button-gray {
+  background-color: #323241;
+  color: rgba(245, 245, 245, 0.87);
 }

@@ -1,5 +1,5 @@
-in the global state use the useReduce to save mor infor of the current user as user name password and so on
+make components in the home with buttons for logoff or to an admin panel
 
-make another global state to work with the number of page in order to change the balls with the numbers
+use a theme toogler to change the colors :)
 
-i will tray to chance the global state and  pas like a prop for use the ball in difeentes pages like the states bue i broke the app
+Aregister version with 4 steps to change the flow to a total of 4 steps

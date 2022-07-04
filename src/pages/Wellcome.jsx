@@ -18,7 +18,7 @@ const Wellcome = () => {
 
   return (
     <div className={classes["wellcome-wrapper"]}>
-      <Titles title="wellcome again :)" />
+      <Titles title="wellcome home :)" />
       <div className={classes.buttons}>
         <div className={classes.button1}>
           <Link to={"/login"}>

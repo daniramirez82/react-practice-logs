@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useRef,useEffect} from 'react';
+import React, {useRef} from 'react';
 import BallChecked from './ui/flow/BallChecked';
 import './Flow.css';
 import Line from './ui/flow/Line';
@@ -16,11 +16,6 @@ export default function Flow({activeNumber, totalNumber}) {
 
   const wrapper = useRef(null);
   let disabled= [];
-
-  useEffect(()=>{
-    console.log('width: ', wrapper.current ? wrapper.current.offsetWidth : 0 );
-    
-  },[wrapper.current]);
 
   const checked = [...Array(activeNumber-1)].map((item, index)=>{return(<><BallChecked key={index.toString()}/><Line/></>)});
   

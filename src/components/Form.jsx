@@ -108,8 +108,6 @@ export default function Form({ formTitle }) {
               value={formState.user}
               validateState={formState.errors.user}
             />
-            <p>User from input{formState.user}</p>
-            <p>User from store {userInfo.user}</p>
             <Input
               label="Very secret pass"
               name="password"

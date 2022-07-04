@@ -32,7 +32,6 @@ const AuthWrapper = ({ children }) => {
   
   return (
     <UserContext.Provider value={value}>
-      <p>Usuario: {userInfo.user}</p>
       {children}
     </UserContext.Provider>
   );
